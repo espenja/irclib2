@@ -9,6 +9,8 @@ public class StaticMessages {
 	public static final String pong = ":niven.freenode.net PONG niven.freenode.net :chat.freenode.net";
 	public static final String privmsg = ":irclib!user@host.somewhere.no PRIVMSG #online.irclib :testing privmsg";
 
+	public static final String endofMOTD = ":irc.freenode.org 376 nick :End of /MOTD command.";
+
 	public static final String messageWithoutIdentAndHost = ":irclib COMMAND #online.irclib";
 	public static final String messageWithoutIdent = ":irclib@host.somewhere.no COMMAND #online.irclib";
 

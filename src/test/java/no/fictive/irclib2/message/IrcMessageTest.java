@@ -125,4 +125,22 @@ public class IrcMessageTest {
 		IrcMessage aMessage = new IrcMessage(StaticMessages.pong);
 		assertEquals("niven.freenode.net", aMessage.getServerName());
 	}
+
+	@Test
+	public void shouldBeANumericMessage() {
+		IrcMessage aMessage = new IrcMessage(StaticMessages.endofMOTD);
+		assertTrue(aMessage.isNumeric());
+	}
+
+	@Test
+	public void shouldNotBeANumericMessage() {
+		IrcMessage aMessage = new IrcMessage(StaticMessages.join);
+		assertFalse(aMessage.isNumeric());
+	}
+
+	@Test
+	public void shouldReturnRawMessage() {
+		IrcMessage aMessage = new IrcMessage(StaticMessages.endofMOTD);
+		assertEquals(StaticMessages.endofMOTD, aMessage.getMessage());
+	}
 }
